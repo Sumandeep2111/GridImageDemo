@@ -18,13 +18,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         gridView= findViewById(R.id.gridView);
-        IconAdapter iconAdapter = new IconAdapter(this,imageIcons,numbers);
+        final IconAdapter iconAdapter = new IconAdapter(this,imageIcons,numbers);
         gridView.setAdapter(iconAdapter);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(MainActivity.this,"you click the item "  + numbers[i],Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,"you click the item "  + iconAdapter.getItem(i),Toast.LENGTH_SHORT).show();
             }
         });
     }

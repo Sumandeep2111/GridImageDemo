@@ -25,8 +25,8 @@ class IconAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int i) {
-        return null;
+    public String getItem(int i) {
+        return numbers[i];
     }
 
     @Override
